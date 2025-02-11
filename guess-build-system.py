@@ -19,6 +19,7 @@ Supported build systems:
 - sbt (Scala)
 - Go Modules
 - Lazarus (Free Pascal)
+- SCons
 
 Usage:
     ./guess-build-system.py         # Check current directory
@@ -59,7 +60,8 @@ class BuildSystemDetector:
             'Ant': [r'^build\.xml$'],
             'sbt (Scala)': [r'^build\.sbt$'],
             'Go Modules': [r'^go\.(mod|sum)$'],
-            'Lazarus': [r'^.*\.(lpi|lpr|lpk)$']
+            'Lazarus': [r'^.*\.(lpi|lpr|lpk)$'],
+            'SCons': [r'^SConstruct$', r'^SConscript$'] 
         }
 
     def detect_build_system(self, directory='.'):
